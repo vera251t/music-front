@@ -1,0 +1,23 @@
+.footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #3c3c3c;
+    padding: 2.5rem;
+}
+.footer__content {
+    display: flex;
+    justify-content: space-around;
+} 
+.footer__left a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.footer__left a:hover {
+    text-decoration: underline;
+}
+.footer__right p {
+    color: #888;
+    font-size: 1rem;
+} 

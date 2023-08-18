@@ -1,0 +1,45 @@
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+.table__song {
+    width: 800px;
+}
+
+.table__head {
+    background-color: #f2f2f2;
+}
+  
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.table__info {
+    display: flex;
+    gap: 0.3rem;
+}
+  
+.table__body tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+  
+.table__song img {
+    width: 110px;
+    height: 120px;
+}
+
+.bxs-trash {
+    color: rgb(59, 153, 22);
+}
+
+.bxs-edit-alt {
+    color: burlywood;
+}
+  
+@media (max-width: 700px) {
+
+  }
+  
