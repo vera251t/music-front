@@ -28,6 +28,8 @@ const SongForm = ({ songs }) => {
     reset({
       name: '',
       youtubeUrl: '',
+      artistId: '',
+      albumId: '',
     })
   }
   const handleCloseForm = () => {
@@ -58,12 +60,12 @@ const SongForm = ({ songs }) => {
           </div>
           <div>
             <h3>Artists</h3>
-            <select {...register('artist')}>
-              <option>
+            <select {...register('artistId')}>
+              <option hidden>
                 Select artist
               </option>
               {songs?.map((song) => (
-                <option key={song.artists[0].id} value={song.artists[0].name}>
+                <option key={song.artists[0].artistId} value={song.artists[0].artistId}>
                   {song.artists[0].name}
                 </option>
               ))}
@@ -71,12 +73,12 @@ const SongForm = ({ songs }) => {
           </div>
           <div>
             <h3>Album</h3>
-            <select {...register('album')}>
-              <option>
+            <select {...register('albumId')}>
+              <option hidden>
                 Select album
               </option>
               {songs?.map((song) => (
-                <option key={song.artists[0].id} value={song.artists[0].name}>
+                <option key={song.albumId.id} value={song.albumId.id}>
                   {song.album.name}
                 </option>
               ))}
@@ -84,13 +86,13 @@ const SongForm = ({ songs }) => {
           </div>
           <div>
             <h3>Genres</h3>
-            <select {...register('genre')}>
-              <option>
+            <select {...register('genreId')}>
+              <option hidden>
                 Select genre
               </option>
               {songs?.map((song) => (
-                <option key={song.artists[0].id} value={song.artists[0].name}>
-                  {song.album.name}
+                <option key={song.genres[0].id} value={song.genres[0].id}>
+                  {song.genres[0].name}
                 </option>
               ))}
             </select>

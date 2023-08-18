@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 
 const Album = () => {
 
-    const baseUrl = 'http://localhost:8080/api/v1'
+    const baseUrl = 'https://song-crud-1j5p.onrender.com/api/v1'
     const [ albums, getAllAlbum, createNewAlbum, deleteAlbumById, updateAlbumById ] = useFetch(baseUrl)
 
     useEffect(() => {
