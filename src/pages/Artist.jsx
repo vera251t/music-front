@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 
 
 const Artist = () => {
-    const baseUrl = 'https://song-crud-1j5p.onrender.com/api/v1'
+    const baseUrl = 'https://song-crud-1ku8.onrender.com/api/v1'
     const [ artists, getAllArtist, createNewArtist, deleteArtistById, updateArtistById ] = useFetch(baseUrl)
 
     useEffect(() => {

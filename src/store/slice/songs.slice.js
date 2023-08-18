@@ -26,7 +26,7 @@ export const { setSongG, addSongG, deleteSongG, updateSongG } = songsSlice.actio
 
 export default songsSlice.reducer
 
-const baseUrl = 'https://song-crud-1j5p.onrender.com/api/v1/songs'
+const baseUrl = 'https://song-crud-1ku8.onrender.com/api/v1/songs'
 
 export const getAllSongsThunk = () => (dispatch) => {
     const url = baseUrl

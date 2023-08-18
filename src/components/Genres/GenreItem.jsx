@@ -1,4 +1,3 @@
-import React from 'react'
 
 const GenreItem = ({ genre, deleteGenreById, setUpdateGenres }) => {
   const handleDelete = () => {

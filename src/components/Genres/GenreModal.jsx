@@ -7,7 +7,7 @@ const GenreModal = () => {
 
   const [updateGenres, setUpdateGenres] = useState()
 
-  const baseUrl = 'https://song-crud-1j5p.onrender.com/api/v1'
+  const baseUrl = 'https://song-crud-1ku8.onrender.com/api/v1'
   const [ genres, getAllGenres, createNewGenre, deleteGenreById, updateGenreById ] = useFetch(baseUrl)
   
   useEffect(() => {
