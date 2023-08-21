@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import useFetch from "../../hooks/useFetch"
 import { useForm } from "react-hook-form"
 import GenreItem from "./GenreItem"
+import './styles/Genre.css'
 
-const GenreModal = () => {
+const Genre = () => {
 
   const [updateGenres, setUpdateGenres] = useState()
 
@@ -31,38 +32,32 @@ const GenreModal = () => {
     })
   }
 
-  const handleExit = () => {
-    reset({
-        name: ''
-    });
-    setUpdateGenres()
-  }
-
   return (
-    <div>
-    <h3>Add Genres</h3>
-    <div onClick={handleExit}>x</div>
-    <form onSubmit={handleSubmit(submit)}>
-      <div>
-        <label htmlFor="name">Genre</label>
-        <input { ...register('name')} type="text" id="name"placeholder="Enter genre"/>
+    <>
+      <div className="genre__modal">
+        <h3 className="genre__title">Add Genres</h3>
+        <form onSubmit={handleSubmit(submit)}>
+          <div className="genre__div">
+            <label className="genre__form-genre" htmlFor="name">Genre</label>
+            <input { ...register('name')} type="text" id="name"placeholder="Enter genre"/>
+          </div>
+          <button className="genre__add">Add</button>
+        </form>
       </div>
-      <button>Add</button>
-    </form>
-    <div>
-      {
-        genres?.map(genre => (
-          <GenreItem 
-            key={genre.id}
-            genre={genre}
-            deleteGenreById={deleteGenreById}
-            setUpdateGenres={setUpdateGenres}
-          />
-        ))
-      }
+      <div className="genre__container">
+        {
+          genres?.map(genre => (
+            <GenreItem 
+              key={genre.id}
+              genre={genre}
+              deleteGenreById={deleteGenreById}
+              setUpdateGenres={setUpdateGenres}
+            />
+          ))
+        }
     </div>
-  </div>
+    </>
   )
 }
 
-export default GenreModal
+export default Genre

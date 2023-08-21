@@ -1,0 +1,8 @@
+.filter__artists {
+    color: #FFFF;
+}
+
+.filters__artist-name {
+    color: #ADAFAE;
+    cursor: pointer;
+}

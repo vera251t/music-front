@@ -2,16 +2,24 @@ import { useEffect, useState } from "react"
 import useFetch from "../hooks/useFetch"
 import AlbumItem from "../components/Album/AlbumItem"
 import { useForm } from "react-hook-form"
+import './styles/Album.css'
 
 const Album = () => {
 
     const baseUrl = 'https://song-crud-1ku8.onrender.com/api/v1'
-    const [ albums, getAllAlbum, createNewAlbum, deleteAlbumById, updateAlbumById ] = useFetch(baseUrl)
+    const [ albums, getAllAlbums, createNewAlbum, deleteAlbumById, updateAlbumById ] = useFetch(baseUrl)
 
     useEffect(() => {
-        getAllAlbum('/albums')
+        getAllAlbums('/albums')
     }, [])
 
+    const baseUrl2 = 'https://song-crud-1ku8.onrender.com/api/v1'
+    const [ artists, getAllAtists] = useFetch(baseUrl2)
+
+    useEffect(() => {
+        getAllAtists('/artists')
+    }, [])
+    
     const { register, reset, handleSubmit } = useForm()
     const [updateAlbum, setUpdateAlbum] = useState()
     const [isFormVisible, setFormVisible] = useState(false)
@@ -34,42 +42,49 @@ const Album = () => {
             artistId: ''
         })
     }
-
-    const handleCloseForm = () => {
-        setFormVisible(false)
-    }
     
     const handleShowForm = () => {
         setFormVisible(true)
     }
+
+    const handleExit = () => {
+        reset({
+            name: '',
+            releaseYear: '',
+            image: '',
+            artistId: ''
+        })
+        setFormVisible(false)
+        setUpdateAlbum()
+    }
   return (
     <section>
-        <h3>Albums</h3>
+        <h3 className="album__title">Albums</h3>
         {
             isFormVisible && (
-            <div>
-                <form onSubmit={handleSubmit(submit)}>
-                    <h2>Album form</h2>
-                    <div className="form__x" onClick={handleCloseForm}>x</div>
+            <div className="form__overlay">
+                <form className="form__album" onSubmit={handleSubmit(submit)}>
+                    <h2 className="form__title-h2">Album form</h2>
+                    <div className="form__x" onClick={handleExit}>x</div>
                     <div className="form__section">
                         <label className="form__label" htmlFor="name"></label>
-                        <input { ...register('name') } className="form__input" id="name" type="text" placeholder="Album name" />
+                        <input className="form__input" { ...register('name') } id="name" type="text" placeholder="Album name" />
                     </div>
                     <div className="form__section">
                         <label className="form__label" htmlFor="releaseYear"></label>
-                        <input { ...register('releaseYear') } className="form__input" id="releaseYear" type="number" placeholder="Release year" />
+                        <input className="form__input" { ...register('releaseYear') } id="releaseYear" type="number" placeholder="Release year" />
                     </div>
                     <div className="form__section">
                         <label className="form__label" htmlFor="image"></label>
-                        <input { ...register('image') } className="form__input" id="image" type="text" placeholder="Image url" />
+                        <input className="form__input" { ...register('image') } id="image" type="text" placeholder="Image url" />
                     </div>
                     <div>
-                        <label htmlFor="artistId">Genres</label>
-                        <select { ...register('artistId') }>
+                        <label className="form__input-artist" htmlFor="artistId">Artists</label>
+                        <select { ...register('artistId') } className="form__select">
                             <option hidden>Select Artist</option>
                                 {
-                                    albums?.map(album => (
-                                        <option value={album.id} key={album.id}>{album.artist.name}</option>
+                                    artists?.map(artist => (
+                                        <option value={artist.id} key={artist.id}>{artist.name}</option>
                                     ))
                                 }
                         </select>
@@ -80,10 +95,10 @@ const Album = () => {
             )
         }
         {!isFormVisible && (
-            <button onClick={handleShowForm}>Add New Album</button>
+            <button className="album__btn" onClick={handleShowForm}>Add New Album</button>
         )}
         <div>
-            <ul>
+            <ul className="album__container">
                 {
                     albums?.map(album => (
                         <AlbumItem
@@ -91,6 +106,7 @@ const Album = () => {
                             album={album}
                             deleteAlbumById={deleteAlbumById}
                             setUpdateAlbum={setUpdateAlbum}
+                            setFormVisible={setFormVisible}
                         />
                     ))
                 }

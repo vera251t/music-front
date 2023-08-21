@@ -1,0 +1,59 @@
+.artist__info {
+    width: 243px;
+    height: 320px;
+    background-color: #1A1A1A;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.3rem;
+}
+
+.artist__img {
+    width: 244px;
+    height: 158px;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-bottom: 15px;
+}
+
+.artist__name {
+    color: #FFFF;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 1.3rem;
+}
+
+.artist__country,
+.artist__genre,
+.artist__year {
+    font-weight: bold;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #ADAFAE;
+    margin-left: 0.8rem;
+}
+
+.artist__country-info,
+.artist__genre-info,
+.artist__year-info {
+    font-size: 1.2rem;
+    color: #f0e6e6;
+}
+
+.artist__btn-icon {
+    margin-top: 1rem;
+    margin-left: 9.5rem;
+}
+
+.artist__btn-edit,
+.artist__btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+}
+
+.artist__btn-edit:hover,
+.artist__btn-delete:hover {
+    color: #333;
+}

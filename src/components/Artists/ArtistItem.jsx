@@ -1,10 +1,6 @@
+import './styles/ArtistItem.css'
 
-const ArtistItem = ({ artist, deleteArtistById, setUpdateArtist }) => {
-    
-    /*<li>
-        <span>Genres: </span>
-        <span>{artist.genres[0].name}</span>    
-    </li>*/
+const ArtistItem = ({ artist, deleteArtistById, setUpdateArtist, setFormVisible }) => {
 
     const handleDelete = () => {
         deleteArtistById('/artists', artist.id)
@@ -12,24 +8,32 @@ const ArtistItem = ({ artist, deleteArtistById, setUpdateArtist }) => {
       
     const handleEdit = () => {
         setUpdateArtist(artist)
+        setFormVisible(true)
     }
+
     return (
-    <div>
-        <img src={artist.image} alt={ artist.name } />
+    <div className="artist__info">
+        <img className="artist__img" src={artist.image} alt={ artist.name } />
         <li>
-            { artist.name }
+            <span className="artist__name">
+                {artist.name}
+            </span>
         </li>
         <li>
-            <span>Country: </span>
-            <span>{artist.country}</span>    
+            <span className="artist__country">Country:</span>
+            <span className="artist__country-info">{artist.country}</span>  
         </li>
         <li>
-            <span>Year: </span>
-            <span>{artist.formationYear}</span>    
+            <span className="artist__genre">Genres:</span>
+            <span className="artist__genre-info">{artist.genres[0]?.name}</span>    
         </li>
-        <div>
-            <button onClick={handleEdit}><i className='bx bx-edit'></i></button>
-            <button onClick={handleDelete}><i className='bx bx-trash'></i></button>
+        <li>
+            <span className="artist__year">Year:</span>
+            <span className="artist__year-info">{artist.formationYear}</span>    
+        </li>
+        <div className="artist__btn-icon">
+            <button className="artist__btn-edit" onClick={handleEdit}><i className='bx bx-edit'></i></button>
+            <button className="artist__btn-delete" onClick={handleDelete}><i className='bx bx-trash'></i></button>
         </div>
     </div>
   )

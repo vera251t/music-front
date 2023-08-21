@@ -1,0 +1,112 @@
+.album__title {
+    font-size: 2.5rem;
+    color: #FFFF;
+    padding: 1rem;
+}
+
+.album__btn {
+    border: none;
+    background-color: #284ee6;
+    color: white;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-bottom: 1.3rem;
+    margin-left: 1.3rem;
+}
+
+.album__btn:hover {
+    background-color: #0326af;
+}
+
+.form__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form__title-h2 {
+    color: #FFFF;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.form__album {
+    background-color: #121212;
+    border-radius: 0.5rem;
+    padding: 20px;
+    width: 400px;
+    height: 315px;
+    position: absolute;
+}
+
+.form__x {
+    color: #ccc;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.form__section {
+    margin-bottom: 15px;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #2D2518;
+    color: #FFFF;
+    border-radius: 0.5rem;
+}
+
+.form__input-artist {
+    color: #FFFF;
+    font-weight: bold;
+}
+
+.form__select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #664e27;
+    color: #FFFF;
+    border-radius: 0.5rem;
+}
+
+.form__btn {
+    background-color: #FFFF;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 15px;
+    margin-top: 1rem;
+    margin-left: 19rem;
+}
+
+.form__btn:hover {
+    background-color: #ccbcbc;
+}
+
+.album__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 38px 80px;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}

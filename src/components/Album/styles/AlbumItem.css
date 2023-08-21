@@ -1,0 +1,55 @@
+.album__card {
+    width: 220px;
+    height: 360px;
+    background-color: #1A1A1A;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.3rem;
+}
+
+.album__image {
+    width: 220px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-bottom: 15px;
+}
+
+.album__name {
+    color: #FFFF;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.album__artist,
+.album__year {
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #ADAFAE;
+    font-weight: bold;
+}
+
+.album__artist-name,
+.album__year-release {
+    color: #bbb4b4;
+}
+
+.album__btn-icon {
+    margin-top: 1rem;
+    margin-left: 8.8rem;
+}
+
+.album__edit,
+.album__delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+}
+
+.album__edit:hover,
+.album__delete:hover {
+    color: #333;
+}

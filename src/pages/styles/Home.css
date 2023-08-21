@@ -1,3 +1,141 @@
+.home__title {
+    font-size: 3rem;
+}
+
+.home__filter-btn {
+    border: none;
+    background-color: transparent;
+    color: #284ee6;
+    font-size: 1.2rem;
+    margin-left: 60%;
+}
+
+.home__aside {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.3s ease;
+}  
+.home__aside.open {
+    right: 0;
+}
+.home__title {
+    padding: 1rem;
+    color: #FFFF;
+}
+.bxs-x-circle {
+    color: #ccc;
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.song__create {
+    border: none;
+    background-color: #284ee6;
+    color: white;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.song__create:hover {
+    background-color: #0326af;
+}
+
+.song__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.song__form-x {
+    color: #ccc;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.song__form {
+    background-color: #121212;
+    border-radius: 0.5rem;
+    padding: 20px;
+    width: 400px;
+    position: absolute;
+}
+
+.song__form-title {
+    color: #FFFF;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.song__section {
+    margin-bottom: 15px;
+}
+
+.song__form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFF;
+    font-weight: bold;
+}
+
+.song__input {
+    width: 100%;
+    padding: 8px;
+    background-color: #2D2518;
+    border: 1px solid #ccc;
+    color: #FFFF;
+    border-radius: 0.5rem;
+}
+
+.song__paragraph {
+    font-size: 0.9rem;
+    color: #664e27;
+}
+.song__form-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #664e27;
+    color: #FFFF;
+    border-radius: 0.5rem;
+}
+
+.song__form-la {
+    color: #FFFF;
+    font-weight: bold;
+}
+.song__form-btn {
+    background-color: #FFFF;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 15px;
+    margin-top: 1rem;
+}
+
+.song__form-btn:hover {
+    background-color: #ccbcbc;
+}
+
 .table {
     display: flex;
     justify-content: center;
@@ -9,7 +147,8 @@
 }
 
 .table__head {
-    background-color: #f2f2f2;
+    background-color: #302e2e;
+    color: #FFFF;
 }
   
 th, td {
@@ -22,8 +161,13 @@ th, td {
     gap: 0.3rem;
 }
   
+.table__body {
+    background-color: #232736;
+    color: white;
+}
+
 .table__body tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #3d2b2b;
 }
   
 .table__song img {
@@ -31,15 +175,17 @@ th, td {
     height: 120px;
 }
 
-.bxs-trash {
-    color: rgb(59, 153, 22);
+.table__btn-delete,
+.table__btn-edit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 24px;
+    color: #666;
 }
 
-.bxs-edit-alt {
-    color: burlywood;
+.table__btn-delete:hover,
+.table__btn-edit:hover {
+    color: #333;
 }
-  
-@media (max-width: 700px) {
-
-  }
-  
